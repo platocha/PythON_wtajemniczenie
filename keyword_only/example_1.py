@@ -5,9 +5,9 @@ def run_example():
     is_affordable = check_affordability(loan_amount=loan_amount, property_value=property_value)
     print_results(is_affordable)
 
-def check_affordability(*, loan_amount, property_value):
+def check_affordability(*, loan_amount, property_value, max_ltv=0.8):
     loan_to_value = loan_amount / property_value
-    return loan_to_value <= 0.8
+    return loan_to_value <= max_ltv
 
 def print_results(is_affordable):
     if is_affordable:
